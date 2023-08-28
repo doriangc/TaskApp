@@ -1,23 +1,27 @@
 <template>
   <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Tab 2</ion-title>
-      </ion-toolbar>
-    </ion-header>
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Tab 2</ion-title>
-        </ion-toolbar>
-      </ion-header>
-
-      <ExploreContainer name="Tab 2 page" />
+      <h2 class="title">Who are you?</h2>
+      <UserCard name="Johnny"/>
+      <UserCard name="Robby"/>
     </ion-content>
   </ion-page>
 </template>
 
-<script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+<script lang="ts">
+import { IonPage, IonContent } from '@ionic/vue';
+
+import { defineComponent } from 'vue';
+import UserCard from '@/components/UserCard.vue';
+
+export default defineComponent({
+  components: { UserCard }
+});
 </script>
+
+<style scoped>
+.title {
+  text-align: center;
+  margin: 30px 0px;
+}
+</style>

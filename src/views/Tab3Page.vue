@@ -1,23 +1,35 @@
 <template>
   <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Tab 3</ion-title>
-      </ion-toolbar>
-    </ion-header>
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Tab 3</ion-title>
-        </ion-toolbar>
-      </ion-header>
-
-      <ExploreContainer name="Tab 3 page" />
+      <h3>Monday</h3>
+      <ChoreCard/>
+      <ChoreCard/>
+      <ChoreCard/>
+      <h3>Tuesday</h3>
+      <ChoreCard/>
+      <ChoreCard/>
     </ion-content>
   </ion-page>
 </template>
 
-<script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+<script lang="ts">
+import { IonPage, IonContent } from '@ionic/vue';
+import { defineComponent } from 'vue';
+
+import ChoreCard from '@/components/ChoreCard.vue';
+
+export default defineComponent({
+  components: { ChoreCard },
+});
 </script>
+
+<style scoped>
+  h3 {
+    text-align: center;
+  }
+
+  .title {
+    padding: 10px 30px;
+    background-color: var();
+  }
+</style>
