@@ -15,10 +15,11 @@
 import Rive from '@/components/Rive.vue';
 
 import { defineComponent } from 'vue';
+import { IonRow, IonCol } from '@ionic/vue';
 
 export default defineComponent({
   name: 'ChoreCard',
-  components: { Rive }
+  components: { Rive, IonRow, IonCol }
 });
 </script>
 

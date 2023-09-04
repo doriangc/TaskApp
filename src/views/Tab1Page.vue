@@ -1,19 +1,8 @@
 <template>
   <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Tab 1</ion-title>
-      </ion-toolbar>
-    </ion-header>
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Tab 1</ion-title>
-        </ion-toolbar>
-      </ion-header>
+      <Header/>
 
-      <div class="orb"></div>
-    
       <h2 class="title">Today's Chores</h2>
 
       <ChoreCard/>
@@ -32,19 +21,18 @@
 </template>
 
 <script lang="ts">
-import { IonPage, IonContent } from '@ionic/vue';
+import { IonPage, IonContent, IonIcon } from '@ionic/vue';
 
-
-import { IonIcon } from '@ionic/vue';
 import { defineComponent } from 'vue';
 import { checkmarkCircleOutline, logoIonic } from 'ionicons/icons';
 
 import ChoreCard from '@/components/ChoreCard.vue';
+import Header from '@/components/Header.vue';
 
 export default defineComponent({
-  components: { IonIcon, ChoreCard },
+  name: 'Tab1Page',
+  components: { IonIcon, ChoreCard, Header, IonPage, IonContent },
   setup() {
-    
     return {
       logoIonic,
       checkmarkCircleOutline
@@ -55,14 +43,14 @@ export default defineComponent({
 
 <style scoped>
   h3 {
-    margin: 4px 0;
     font-size: 1.2em;
+    margin: 4px 0;
   }
 
   p {
+    color: var(--ion-color-medium-tint, #000);
     font-size: 0.9em;
     margin: 4px 0;
-    color: var(--ion-color-medium-tint, #000);
   }
 
   ion-col {

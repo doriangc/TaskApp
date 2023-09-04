@@ -1,6 +1,8 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true">
+      <Header/>
+
       <h3>Monday</h3>
       <ChoreCard/>
       <ChoreCard/>
@@ -17,9 +19,11 @@ import { IonPage, IonContent } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
 import ChoreCard from '@/components/ChoreCard.vue';
+import Header from '@/components/Header.vue';
 
 export default defineComponent({
-  components: { ChoreCard },
+  name: 'Tab3Page',
+  components: { ChoreCard, IonPage, IonContent, Header },
 });
 </script>
 
